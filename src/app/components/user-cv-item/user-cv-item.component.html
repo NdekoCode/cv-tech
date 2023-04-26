@@ -1,0 +1,22 @@
+<button class="card-item" (click)="getUser(userData)">
+  <div class="relative">
+    <img
+      class="object-cover w-8 h-8 rounded-full"
+      [src]="userData.image"
+      [alt]="userData.firstName"
+    />
+    <span
+      class="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"
+    ></span>
+  </div>
+
+  <div class="text-left rtl:text-right">
+    <h1 class="text-sm font-medium text-gray-700 capitalize dark:text-white">
+      {{ userData.firstName }} {{ userData.lastName }}
+    </h1>
+
+    <p class="text-xs text-gray-500 dark:text-gray-400">
+      {{ userData.company.title }}
+    </p>
+  </div>
+</button>

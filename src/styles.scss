@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:host {
+    width  : 100%;
+    display: block;
+}
+
+*,
+*::before,
+*::after {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .card-item {
+        @apply flex items-center w-full px-5 py-2 transition-colors duration-200 gap-x-2;
+
+        &:hover {
+            @apply bg-gray-100
+        }
+
+        &:focus {
+            @apply outline-none;
+        }
+    }
+
+    .dark {
+        .card-item:hover {
+            @apply bg-gray-800
+        }
+    }
+}
