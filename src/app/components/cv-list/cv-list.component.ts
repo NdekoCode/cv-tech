@@ -8,6 +8,7 @@ import { User } from './../../utilities/models/user.model';
 })
 export class CvListComponent implements OnInit {
   @Output() onUserSelect = new EventEmitter();
+  selected: boolean = false;
   userList!: User[];
   userSelected!: User;
   ngOnInit() {

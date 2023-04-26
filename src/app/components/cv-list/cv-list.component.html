@@ -6,11 +6,11 @@
       Accounts
     </h2>
 
-    <div class="mt-8 space-y-4">
+    <div class="mt-8 mr-3 space-y-4">
       <app-user-cv-item
-        class="card-item"
         *ngFor="let userData of userList"
         [userData]="userData"
+        [isSelected]="userSelected === userData"
         (sendUser)="getSelectedUser($event)"
       >
         <img

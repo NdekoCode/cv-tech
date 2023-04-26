@@ -8,8 +8,10 @@ import { User } from './../../utilities/models/user.model';
 })
 export class UserCvItemComponent {
   @Input() userData!: User;
+  @Input() isSelected: boolean = false;
   @Output() sendUser = new EventEmitter<User>();
-  getUser(user: User) {
-    this.sendUser.emit(user);
+  getUser() {
+    // TODO Emettre un evenement et y injecter la personne
+    this.sendUser.emit(this.userData);
   }
 }

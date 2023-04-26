@@ -20,9 +20,10 @@
 
 @layer components {
     .card-item {
-        @apply flex items-center w-full px-5 py-2 transition-colors duration-200 gap-x-2;
+        @apply flex items-center w-full px-5 py-3 transition-colors duration-200 gap-x-2 mb-3;
 
-        &:hover {
+        &:hover,
+        &.active {
             @apply bg-gray-100
         }
 

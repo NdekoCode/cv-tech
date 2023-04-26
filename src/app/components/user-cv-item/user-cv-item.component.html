@@ -1,4 +1,8 @@
-<button class="card-item" (click)="getUser(userData)">
+<button
+  class="card-item"
+  [class]="isSelected ? 'active' : ''"
+  (click)="getUser()"
+>
   <div class="relative">
     <img
       class="object-cover w-8 h-8 rounded-full"
