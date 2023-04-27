@@ -6,7 +6,7 @@
   <div class="relative">
     <img
       class="object-cover w-8 h-8 rounded-full"
-      [src]="userData.image"
+      [src]="userData.image | defaultImage"
       [alt]="userData.firstName"
     />
     <span

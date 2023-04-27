@@ -12,7 +12,7 @@
     >
       <img
         class="w-full h-full rounded-full"
-        [src]="userData.image"
+        [src]="userData.image | defaultImage"
         [alt]="userData.firstName"
       />
     </div>
