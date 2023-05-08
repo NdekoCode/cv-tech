@@ -1,6 +1,5 @@
-<div class="container px-4 mx-auto max-w-7xl md:px-0">
-  <div class="flex">
-    <app-cv-list (onUserSelect)="selectUser($event)"></app-cv-list>
-    <app-cv-details [userData]="userSelected" />
-  </div>
-</div>
+<app-template>
+  <app-cv-list (onUserSelect)="selectUser($event)" userlist></app-cv-list>
+
+  <app-cv-details [userData]="userSelected" content />
+</app-template>
