@@ -14,6 +14,7 @@ import { UserCvItemComponent } from './components/user-cv-item/user-cv-item.comp
 import { CvComponent } from './pages/cv/cv.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
     ObserveElementDirective,
     AgentComponent,
     TemplateComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
