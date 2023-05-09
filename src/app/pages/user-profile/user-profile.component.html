@@ -1,0 +1,67 @@
+<app-template>
+  <app-sidebar sidebar />
+  <ng-container content>
+    <div
+      *ngIf="user; else notSelected"
+      class="relative flex flex-col items-center rounded-[20px] w-full mx-auto p-4 bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none card-container"
+    >
+      <div class="relative flex justify-center w-full h-32 bg-cover rounded-xl">
+        <img
+          src="/assets/images/banner.png"
+          class="absolute flex justify-center w-full h-32 bg-cover rounded-xl"
+        />
+        <div
+          class="absolute -bottom-12 flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400 dark:!border-navy-700"
+        >
+          <img
+            class="w-full h-full rounded-full"
+            [src]="user.image | defaultImage"
+            [alt]="user.firstName"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col items-center mt-16">
+        <h4 class="text-xl font-bold text-navy-700 dark:text-white">
+          {{ user.firstName }} {{ user.lastName }}
+        </h4>
+        <p class="text-base font-normal text-gray-600">
+          {{ user.company.title }}
+        </p>
+      </div>
+      <div class="mt-6 mb-3 flex gap-14 md:!gap-14">
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-2xl font-bold text-navy-700 dark:text-white">
+            Company Name
+          </p>
+          <p class="text-sm font-normal text-gray-600">
+            {{ user.company.name }}
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-2xl font-bold text-navy-700 dark:text-white">
+            Departement
+          </p>
+          <p class="text-sm font-normal text-gray-600">
+            {{ user.company.department }}
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-2xl font-bold text-navy-700 dark:text-white">
+            Address
+          </p>
+          <p class="text-sm font-normal text-gray-600">
+            {{ user.company.address.city }}
+            {{ user.company.address.address }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <ng-template #notSelected
+      ><div
+        class="flex items-center justify-center w-full min-h-screen text-center"
+      >
+        <h3 class="text-3xl font-bold text-gray-600">Not user Found</h3>
+      </div>
+    </ng-template>
+  </ng-container>
+</app-template>

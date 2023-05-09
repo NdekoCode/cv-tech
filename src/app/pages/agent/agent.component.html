@@ -21,108 +21,44 @@
     <div class="flex flex-wrap justify-center space-x-4">
       <!-- User Results -->
       <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
+        *ngFor="let agent of agents"
+        class="relative flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl group"
       >
         <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
+          [src]="agent.image"
+          [alt]="agent.firstName"
           class="rounded-full h-14 w-14"
         />
         <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
+          <h2 class="text-xl font-semibold text-gray-700">
+            {{ agent.firstName }}
+          </h2>
+          <a
+            [routerLink]="'/user/profile/' + agent.id"
+            class="mt-1 text-sm text-gray-400 cursor-pointer"
+            >Visit Profile</a
+          >
         </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
-      </div>
-      <div
-        class="flex items-center max-w-sm p-5 mt-8 space-x-4 rounded-md shadow-xl"
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/5550850?v=4"
-          alt="image"
-          class="rounded-full h-14 w-14"
-        />
-        <div>
-          <h2 class="text-xl font-semibold text-gray-700">bradtraversy</h2>
-          <p class="mt-1 text-sm text-gray-400 cursor-pointer">Visit Profile</p>
-        </div>
+        <button
+          class="absolute items-center justify-center hidden w-4 h-4 text-white transition-all bg-red-500 rounded-full group-hover:flex group-hover:top-1 top-5 -right-1"
+          (click)="removeAgent(agent)"
+        >
+          <svg
+            class="block w-3 h-3"
+            xmlns="http://www.w3.org/2000/svg"
+            class="fill-current"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              d="M368 368L144 144M368 144L144 368"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </section>

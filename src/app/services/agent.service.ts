@@ -19,9 +19,9 @@ export class AgentService {
     }
   }
   removeAgent(user: User): void {
-    const userIndex = this.users.findIndex((u) => u.id === user.id);
-    if (userIndex) {
-      this.users = this.users.splice(userIndex, 1);
+    console.log(user);
+    if (this.isAgent(user)) {
+      this.users = this.users.filter((u) => u.id !== user.id);
     }
   }
 }

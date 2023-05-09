@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgentComponent } from './pages/agent/agent.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -10,8 +11,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'agent',
+    path: 'agents',
     component: AgentComponent,
+  },
+  {
+    path: 'user/profile/:id',
+    component: UserProfileComponent,
   },
   {
     path: '**',
