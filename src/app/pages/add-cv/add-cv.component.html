@@ -1,0 +1,104 @@
+<app-template>
+  <app-sidebar sidebar></app-sidebar>
+  <div class="container px-5 mt-5 mx-aut max-w-7xl sm:px-0" content>
+    <form class="p-5 rounded-md" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="w-full md:items-center md:flex md:gap-x-3">
+        <div class="mb-3 md:basis-1/2 md:w-1/2">
+          <label for="firstName" class="text-sm font-medium">FirstName</label>
+          <input
+            type="text"
+            id="firstName"
+            class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+            name="firstName"
+            #formFirstName
+            ngModel
+            placeholder="Your first Name"
+          />
+        </div>
+
+        <div class="mb-3 md:basis-1/2 md:w-1/2">
+          <label for="lastName" class="text-sm font-medium">LastName</label>
+          <input
+            type="text"
+            id="lastName"
+            class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+            name="lastName"
+            #formlastName
+            ngModel
+            placeholder="Your last Name"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="text-sm font-medium">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="email"
+          #formEmail
+          ngModel
+          placeholder="Your Email adress"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="job" class="text-sm font-medium">Job</label>
+        <input
+          type="text"
+          id="job"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="job"
+          #formJob
+          ngModel
+          placeholder="Your Job"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="job" class="text-sm font-medium">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="age"
+          #formAge
+          ngModel
+          placeholder="Your Age"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cin" class="text-sm font-medium">CIN</label>
+        <input
+          type="number"
+          minlength="8"
+          id="cin"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="cin"
+          #formCin
+          ngModel
+          placeholder="Your CIN"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="picture" class="text-sm font-medium">Picture URL</label>
+        <input
+          type="url"
+          id="picture"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="picture"
+          #formPicture
+          ngModel
+          placeholder="Your Picture url"
+        />
+      </div>
+      <button
+        class="px-5 py-3 text-gray-200 transition-colors bg-blue-600 rounded shadow hover:bg-blue-700"
+      >
+        Add new CV
+      </button>
+    </form>
+  </div>
+</app-template>

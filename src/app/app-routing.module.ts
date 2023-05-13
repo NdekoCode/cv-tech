@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCvComponent } from './pages/add-cv/add-cv.component';
 import { AgentComponent } from './pages/agent/agent.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'user/profile/:id',
     component: UserProfileComponent,
+  },
+  {
+    path: 'user/add-cv',
+    component: AddCvComponent,
   },
   {
     path: '**',
