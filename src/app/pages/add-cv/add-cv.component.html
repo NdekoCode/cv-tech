@@ -6,6 +6,7 @@
         <div class="mb-3 md:basis-1/2 md:w-1/2">
           <label for="firstName" class="text-sm font-medium">FirstName</label>
           <input
+            required
             type="text"
             id="firstName"
             class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
@@ -19,6 +20,7 @@
         <div class="mb-3 md:basis-1/2 md:w-1/2">
           <label for="lastName" class="text-sm font-medium">LastName</label>
           <input
+            required
             type="text"
             id="lastName"
             class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
@@ -33,7 +35,9 @@
       <div class="mb-3">
         <label for="email" class="text-sm font-medium">Email</label>
         <input
+          required
           type="email"
+          [email]="true"
           id="email"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
           name="email"
@@ -46,6 +50,7 @@
       <div class="mb-3">
         <label for="job" class="text-sm font-medium">Job</label>
         <input
+          required
           type="text"
           id="job"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
@@ -59,6 +64,7 @@
       <div class="mb-3">
         <label for="job" class="text-sm font-medium">Age</label>
         <input
+          required
           type="number"
           id="age"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
@@ -71,6 +77,7 @@
       <div class="mb-3">
         <label for="cin" class="text-sm font-medium">CIN</label>
         <input
+          required
           type="number"
           minlength="8"
           id="cin"
@@ -85,6 +92,7 @@
       <div class="mb-3">
         <label for="picture" class="text-sm font-medium">Picture URL</label>
         <input
+          required
           type="url"
           id="picture"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
