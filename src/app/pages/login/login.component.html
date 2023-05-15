@@ -1,49 +1,55 @@
-<div class="flex flex-col items-center justify-center w-full min-h-screen">
-  <h1 class="mb-5 text-3xl font-bold text-gray-600">Se connecter</h1>
-  <form
-    method="POST"
-    #form="ngForm"
-    class="p-10 border border-gray-100 rounded-lg shadow-lg"
-    (ngSubmit)="onSubmit(form)"
-    autocomplete="off"
+<app-template>
+  <app-sidebar sidebar />
+  <div
+    class="flex flex-col items-center justify-center w-full min-h-screen"
+    content
   >
-    <div class="mb-3">
-      <label class="block text-sm text-medium" for="email">Email*</label>
-      <input
-        required
-        value=""
-        type="email"
-        name="email"
-        [email]="true"
-        id="email"
-        placeholder="Your email"
-        class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
-        pattern="^[a-z]{1,}(\w|[\-\.])*@[a-z]{2,}(\w|[\-\.])*\.[a-z]{2,5}$"
-        formEmail
-        ngModel
-      />
-    </div>
-    <div class="mb-3">
-      <label class="block text-sm text-medium" for="email">Password*</label>
-      <input
-        required
-        type="password"
-        value=""
-        nofill
-        name="password"
-        id="password"
-        minlength="5"
-        placeholder="Your password"
-        class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
-        ngModel
-        formPassword
-      />
-    </div>
-    <button
-      [disabled]="!form.valid"
-      class="px-3 py-2 text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
+    <h1 class="mb-5 text-3xl font-bold text-gray-600">Se connecter</h1>
+    <form
+      method="POST"
+      #form="ngForm"
+      class="p-10 border border-gray-100 rounded-lg shadow-lg"
+      (ngSubmit)="onSubmit(form)"
+      autocomplete="off"
     >
-      Se connecter
-    </button>
-  </form>
-</div>
+      <div class="mb-3">
+        <label class="block text-sm text-medium" for="email">Email*</label>
+        <input
+          required
+          value=""
+          type="email"
+          name="email"
+          [email]="true"
+          id="email"
+          placeholder="Your email"
+          class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
+          pattern="^[a-z]{1,}(\w|[\-\.])*@[a-z]{2,}(\w|[\-\.])*\.[a-z]{2,5}$"
+          formEmail
+          ngModel
+        />
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm text-medium" for="email">Password*</label>
+        <input
+          required
+          type="password"
+          value=""
+          nofill
+          name="password"
+          id="password"
+          minlength="5"
+          placeholder="Your password"
+          class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
+          ngModel
+          formPassword
+        />
+      </div>
+      <button
+        [disabled]="!form.valid"
+        class="px-3 py-2 text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
+      >
+        Se connecter
+      </button>
+    </form>
+  </div>
+</app-template>
