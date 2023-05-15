@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
     SidebarComponent,
     UserProfileComponent,
     AddCvComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

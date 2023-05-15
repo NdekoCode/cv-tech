@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCvComponent } from './pages/add-cv/add-cv.component';
 import { AgentComponent } from './pages/agent/agent.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'agents',
     component: AgentComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'user/profile/:id',
