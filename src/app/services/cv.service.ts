@@ -369,4 +369,9 @@ export class CvService {
     const user = this.userList.find((user) => user.id === userId)!;
     return user;
   }
+  addCv(cv: User) {
+    if (cv) {
+      this.userList.push(cv);
+    }
+  }
 }

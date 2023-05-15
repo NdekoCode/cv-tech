@@ -1,7 +1,7 @@
 import { Company } from './../libs/types';
 
 export class User {
-  id!: number;
+  id!: number | string;
   firstName!: string;
   lastName!: string;
   maidenName?: string;

@@ -3,7 +3,7 @@
   <div class="container px-5 mt-5 mx-aut max-w-7xl sm:px-0" content>
     <form class="p-5 rounded-md" (ngSubmit)="onSubmit(form)" #form="ngForm">
       <div class="w-full md:items-center md:flex md:gap-x-3">
-        <div class="mb-3 md:basis-1/2 md:w-1/2">
+        <div class="relative mb-3 md:basis-1/2 md:w-1/2">
           <label for="firstName" class="text-sm font-medium">FirstName</label>
           <input
             required
@@ -11,13 +11,24 @@
             id="firstName"
             class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
             name="firstName"
-            #formFirstName
+            #formFirstName="ngModel"
             ngModel
             placeholder="Your first Name"
           />
+
+          <div
+            *ngIf="
+              formFirstName.invalid &&
+              formFirstName.touched &&
+              formFirstName.dirty
+            "
+            class="absolute mt-1 text-xs text-red-400 -bottom-4"
+          >
+            Enter a valid first Name
+          </div>
         </div>
 
-        <div class="mb-3 md:basis-1/2 md:w-1/2">
+        <div class="relative mb-3 md:basis-1/2 md:w-1/2">
           <label for="lastName" class="text-sm font-medium">LastName</label>
           <input
             required
@@ -25,10 +36,18 @@
             id="lastName"
             class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
             name="lastName"
-            #formlastName
+            #formLastName="ngModel"
             ngModel
             placeholder="Your last Name"
           />
+          <div
+            *ngIf="
+              formLastName.invalid && formLastName.touched && formLastName.dirty
+            "
+            class="absolute mt-1 text-xs text-red-400 -bottom-4"
+          >
+            Enter a valid last Name
+          </div>
         </div>
       </div>
 
@@ -41,24 +60,18 @@
           id="email"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
           name="email"
-          #formEmail
+          #formEmail="ngModel"
           ngModel
           placeholder="Your Email adress"
+          pattern="^[a-z]{1,}(\w|[\-\.])*@[a-z]{2,}(\w|[\-\.])*\.[a-z]{2,5}$"
         />
-      </div>
 
-      <div class="mb-3">
-        <label for="job" class="text-sm font-medium">Job</label>
-        <input
-          required
-          type="text"
-          id="job"
-          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
-          name="job"
-          #formJob
-          ngModel
-          placeholder="Your Job"
-        />
+        <div
+          *ngIf="formEmail.invalid && formEmail.touched && formEmail.dirty"
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid email address
+        </div>
       </div>
 
       <div class="mb-3">
@@ -69,10 +82,116 @@
           id="age"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
           name="age"
-          #formAge
+          min="18"
+          #formAge="ngModel"
           ngModel
           placeholder="Your Age"
         />
+
+        <div
+          *ngIf="formAge.invalid && formAge.touched && formAge.dirty"
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid age
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="text-sm font-medium">Adress</label>
+        <input
+          required
+          type="text"
+          id="address"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="address"
+          #formAddress="ngModel"
+          ngModel
+          placeholder="Your adress"
+        />
+
+        <div
+          *ngIf="
+            formAddress.invalid && formAddress.touched && formAddress.dirty
+          "
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid address
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="job" class="text-sm font-medium">Job</label>
+        <input
+          required
+          type="text"
+          id="job"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="job"
+          #formJob="ngModel"
+          ngModel
+          placeholder="Your Job"
+        />
+
+        <div
+          *ngIf="formJob.invalid && formJob.touched && formJob.dirty"
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid job title
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="companyName" class="text-sm font-medium"
+          >company Name</label
+        >
+        <input
+          required
+          type="text"
+          id="companyName"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="companyName"
+          min="18"
+          #formCompanyName="ngModel"
+          ngModel
+          placeholder="Your Company Name"
+        />
+
+        <div
+          *ngIf="
+            formCompanyName.invalid &&
+            formCompanyName.touched &&
+            formCompanyName.dirty
+          "
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid Company Name
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="department" class="text-sm font-medium"
+          >Departement Name</label
+        >
+        <input
+          required
+          type="text"
+          id="department"
+          class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
+          name="department"
+          min="18"
+          #formDepartment="ngModel"
+          ngModel
+          placeholder="Your Departement Name"
+        />
+
+        <div
+          *ngIf="
+            formDepartment.invalid &&
+            formDepartment.touched &&
+            formDepartment.dirty
+          "
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid Department Name
+        </div>
       </div>
       <div class="mb-3">
         <label for="cin" class="text-sm font-medium">CIN</label>
@@ -83,10 +202,18 @@
           id="cin"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
           name="cin"
-          #formCin
+          #formCin="ngModel"
           ngModel
+          pattern="^[0-9]{5,}$"
           placeholder="Your CIN"
         />
+
+        <div
+          *ngIf="formCin.invalid && formCin.touched && formCin.dirty"
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid CIN
+        </div>
       </div>
 
       <div class="mb-3">
@@ -97,12 +224,22 @@
           id="picture"
           class="w-full h-full px-2 py-2 transition-all duration-300 border rounded shadow outline-none ring ring-transparent focus:ring-2 focus:ring-blue-200"
           name="picture"
-          #formPicture
+          #formPicture="ngModel"
           ngModel
           placeholder="Your Picture url"
         />
+
+        <div
+          *ngIf="
+            formPicture.invalid && formPicture.touched && formPicture.dirty
+          "
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid URL
+        </div>
       </div>
       <button
+        [disabled]="!form.valid"
         class="px-5 py-3 text-gray-200 transition-colors bg-blue-600 rounded shadow hover:bg-blue-700"
       >
         Add new CV

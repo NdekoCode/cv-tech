@@ -112,7 +112,19 @@
 input,
 select,
 textarea {
-    &.ng-invalid.ng-touched {
+
+    &.ng-touched.ng-invalid {
         @apply border border-red-500;
+    }
+
+    &:focus.ng-valid {
+        @apply border border-green-300;
+    }
+}
+
+
+button {
+    &:disabled {
+        @apply opacity-50;
     }
 }
