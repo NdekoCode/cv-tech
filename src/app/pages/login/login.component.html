@@ -24,9 +24,15 @@
           placeholder="Your email"
           class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
           pattern="^[a-z]{1,}(\w|[\-\.])*@[a-z]{2,}(\w|[\-\.])*\.[a-z]{2,5}$"
-          formEmail
+          #formEmail="ngModel"
           ngModel
         />
+        <div
+          *ngIf="formEmail.invalid && formEmail.touched && formEmail.dirty"
+          class="mt-1 text-xs text-red-400"
+        >
+          Enter a valid email address
+        </div>
       </div>
       <div class="mb-3">
         <label class="block text-sm text-medium" for="email">Password*</label>
@@ -40,9 +46,17 @@
           minlength="5"
           placeholder="Your password"
           class="px-2 py-2 transition-all border border-gray-100 rounded shadow outline-none ring ring-transparent focus:ring-offset-2 focus:ring-blue-100"
+          #formPassword="ngModel"
           ngModel
-          formPassword
         />
+        <div
+          *ngIf="
+            formPassword.invalid && formPassword.touched && formPassword.dirty
+          "
+          class="mt-1 text-xs text-red-400"
+        >
+          The password must be at least 4 characters long
+        </div>
       </div>
       <button
         [disabled]="!form.valid"
