@@ -10,6 +10,5 @@ export class HomeComponent {
   userSelected!: User;
   selectUser<T>(user: T) {
     this.userSelected = user as User;
-    console.log(user);
   }
 }

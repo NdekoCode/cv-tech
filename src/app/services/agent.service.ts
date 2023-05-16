@@ -19,7 +19,6 @@ export class AgentService {
     }
   }
   removeAgent(user: User): void {
-    console.log(user);
     if (this.isAgent(user)) {
       this.users = this.users.filter((u) => u.id !== user.id);
     }

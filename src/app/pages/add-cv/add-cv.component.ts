@@ -12,10 +12,10 @@ import { User } from './../../utilities/models/user.model';
 export class AddCvComponent {
   constructor(private _cvService: CvService, private _router: Router) {}
   onSubmit(arg: NgForm) {
+    const userList = this._cvService.getUserList();
     if (arg.value) {
-      const id = this._cvService.userList.length++;
       const formValues: User = {
-        id,
+        id: +userList[userList.length - 1].id + 1,
         firstName: arg.value.firstName,
         lastName: arg.value.lastName,
         age: arg.value.age,
@@ -31,9 +31,8 @@ export class AddCvComponent {
           title: arg.value.companyName,
         },
       };
-      console.log(formValues);
       this._cvService.addCv(formValues);
-      this._router.navigate(['/']);
+      this._router.navigate(['/user/profile', formValues.id]);
     }
   }
 }

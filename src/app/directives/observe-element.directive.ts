@@ -24,7 +24,6 @@ export class ObserveElementDirective implements OnInit {
       entries,
       observer
     ) => {
-      console.log(entries);
       entries.forEach((entry) => {
         if (entry.intersectionRatio > this.ratio) {
           entry.target.classList.remove('reveal');
